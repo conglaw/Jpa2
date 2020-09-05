@@ -53,4 +53,14 @@ public class CustomerRight {
     public void setThirdRights(List<ThirdRight> thirdRights) {
         this.thirdRights = thirdRights;
     }
+
+    @Override
+    public String toString() {
+        return "CustomerRight{" +
+                "id=" + id +
+                ", rightId=" + rightId +
+                ", rightName='" + rightName + '\'' +
+                ", thirdRights=" + thirdRights +
+                '}';
+    }
 }
