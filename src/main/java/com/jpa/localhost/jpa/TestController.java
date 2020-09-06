@@ -23,7 +23,7 @@ public class TestController {
     @RequestMapping(value = "/right",method = RequestMethod.GET)
     public String saveRight() throws Exception {
 
-        rightService.batchSaveAndDel();
+        rightService.saveRitht(0);
 
         return "";
 

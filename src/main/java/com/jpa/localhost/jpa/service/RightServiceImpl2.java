@@ -14,24 +14,21 @@ import java.util.List;
 
 @Service
 @Log
-public class RightServiceImpl {
+public class RightServiceImpl2 {
 
     @Autowired
     private CustomerRepositry customerRepositry;
 
-    @Autowired
-    private RightServiceImpl2 rightServiceImpl2;
-
-    @Transactional(propagation = Propagation.REQUIRES_NEW,rollbackFor = Exception.class)
-    public CustomerRight saveRitht(Integer i){
-        CustomerRight customerRight = save(i);
-        try {
-            rightServiceImpl2.saveRitht2(i+1);
-        } catch (RuntimeException e) {
-            e.printStackTrace();
-        }
-        return customerRight;
-    }
+//    @Transactional(propagation = Propagation.REQUIRES_NEW,rollbackFor = Exception.class)
+//    public CustomerRight saveRitht(Integer i){
+//        CustomerRight customerRight = save(i);
+//        try {
+//            saveRitht2(i+1);
+//        } catch (RuntimeException e) {
+//            e.printStackTrace();
+//        }
+//        return customerRight;
+//    }
 
     @Transactional(propagation = Propagation.REQUIRES_NEW,rollbackFor = Exception.class)
     public CustomerRight saveRitht2(Integer i) throws NullPointerException {
@@ -64,21 +61,21 @@ public class RightServiceImpl {
     }
 
 
-    @Transactional(propagation = Propagation.REQUIRES_NEW)
-    public void batchSaveAndDel() {
-        CustomerRight right1 = saveRitht(0);
-        log.info( " ====== 1 ====== "+right1);
-        try {
-            CustomerRight right2 = null;
-            right2 = saveRitht2(1);
-            log.info( " ====== 2 ====== "+right2);
-        }catch (Exception e){
-            log.info(" ====== "+e.getLocalizedMessage());
-        }
-
-
-
-//        throw new NullPointerException();
-
-    }
+//    @Transactional(propagation = Propagation.REQUIRES_NEW)
+//    public void batchSaveAndDel() {
+//        CustomerRight right1 = saveRitht(0);
+//        log.info( " ====== 1 ====== "+right1);
+//        try {
+//            CustomerRight right2 = null;
+//            right2 = saveRitht2(1);
+//            log.info( " ====== 2 ====== "+right2);
+//        }catch (Exception e){
+//            log.info(" ====== "+e.getLocalizedMessage());
+//        }
+//
+//
+//
+////        throw new NullPointerException();
+//
+//    }
 }
